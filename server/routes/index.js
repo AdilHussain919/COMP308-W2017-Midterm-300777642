@@ -10,18 +10,19 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-// define the book model
-let book = require('../models/books');
-
 // define the user model
 let UserModel = require('../models/users');
 let User = UserModel.User; // alias for User Model - User object
+
+// define the book model
+let book = require('../models/books');
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
   res.render('content/index', {
     title: 'Home',
-    books: ''
+    books: '',
+    displayName: req.user ? req.user.displayName : ''
    });
 });
 
