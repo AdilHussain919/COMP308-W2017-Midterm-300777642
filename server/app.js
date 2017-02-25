@@ -50,6 +50,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
+// setup session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: true,
+  resave: true
+}));
+
 // initialize passport and flash
 app.use(flash());
 app.use(passport.initialize());
@@ -59,6 +66,12 @@ app.use(passport.session());
 app.use('/', index);
 app.use('/books', books);
 
+// Passport User Configuration
+let UserModel = require('./models/users');
+let User = UserModel.User; // alias for the User Model - User object
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Handle 404 Errors
   app.use(function(req, res) {

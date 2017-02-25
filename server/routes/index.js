@@ -8,9 +8,14 @@ Web App: My Favourite Booklist App
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+let passport = require('passport');
 
 // define the book model
 let book = require('../models/books');
+
+// define the user model
+let UserModel = require('../models/users');
+let User = UserModel.User; // alias for User Model - User object
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
