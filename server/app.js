@@ -1,3 +1,9 @@
+/*
+FileName: app.js
+Author: Adil Hussain
+StudentID: 300777642
+Web App: My Favourite Booklist App
+*/
 // modules required for the project
 let express = require('express');
 let path = require('path'); // part of node.js core

@@ -1,9 +1,9 @@
 {
-  "name": "comp308-w2017-midterm",
+  "name": "comp308-w2017-midterm-300777642",
   "description": "## Welcome to the MidTerm Project - the Favourite Book List App",
   "main": "server.js",
   "authors": [
-    "Tom Tsiliopoulos"
+    "Adil Hussain"
   ],
   "license": "ISC",
   "keywords": [
@@ -11,7 +11,7 @@
     "ExpressJS",
     "EJS"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/AdilHussain919/COMP308-W2017-Midterm-300777642",
   "ignore": [
     "**/.*",
     "node_modules",

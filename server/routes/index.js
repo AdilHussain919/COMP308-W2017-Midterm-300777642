@@ -1,3 +1,9 @@
+/*
+FileName: index.js
+Author: Adil Hussain
+StudentID: 300777642
+Web App: My Favourite Booklist App
+*/
 // modules required for routing
 let express = require('express');
 let router = express.Router();

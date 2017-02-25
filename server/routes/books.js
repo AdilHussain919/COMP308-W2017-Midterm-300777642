@@ -1,3 +1,9 @@
+/*
+FileName: books.js
+Author: Adil Hussain
+StudentID: 300777642
+Web App: My Favourite Booklist App
+*/
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -33,12 +39,13 @@ router.get('/add', (req, res, next) => {
 
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
+  //Book Object
 let newBook = book({
   "Title": req.body.title,
   "Price": req.body.price,
   "Author": req.body.author,
   "Genre": req.body.genre
-});
+});//Creating new book document
 book.create(newBook, (err, book) => {
   if(err) {
     console.log(err);
@@ -51,10 +58,6 @@ book.create(newBook, (err, book) => {
 
 // GET the Book Details page in order to edit an existing Book
 router.get('/:id', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
     try {
       // get a reference to the id from the url
       let id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
@@ -81,7 +84,7 @@ router.get('/:id', (req, res, next) => {
 // POST - process the information passed from the details form and update the document
 router.post('/:id', (req, res, next) => {
     let id = req.params.id;
-
+    // updated values for book object
      let updatedBook = book({
       "_id": id,
       "Title": req.body.title,
@@ -89,7 +92,7 @@ router.post('/:id', (req, res, next) => {
       "Author": req.body.author,
       "Genre": req.body.genre
     });
-
+    // updating book document
     book.update({_id: id}, updatedBook, (err) => {
       if(err) {
         console.log(err);
@@ -106,7 +109,7 @@ router.post('/:id', (req, res, next) => {
 router.get('/delete/:id', (req, res, next) => {
     // get a reference to the id from the url
     let id = req.params.id;
-
+    // deleting book document by id
     book.remove({_id: id}, (err) => {
       if(err) {
         console.log(err);

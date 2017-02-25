@@ -1,5 +1,5 @@
 {
-  "name": "comp308-w2017-midterm",
+  "name": "comp308-w2017-midterm-300777642",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -40,10 +40,10 @@
     "ExpressJS",
     "EJS"
   ],
-  "author": "Tom Tsiliopoulos",
+  "author": "Adil Hussain",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/AdilHussain919/COMP308-W2017-Midterm-300777642/issues"
   },
-  "homepage": ""
+  "homepage": "https://github.com/AdilHussain919/COMP308-W2017-Midterm-300777642"
 }
